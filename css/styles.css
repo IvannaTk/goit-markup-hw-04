@@ -10,6 +10,8 @@
 
   --main-font: "Roboto", sans-serif;
   --logo-font: "Raleway", sans-serif;
+  --card-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12),
+    0px 4px 4px rgba(0, 0, 0, 0.06), 1px 4px 6px rgba(0, 0, 0, 0.16);
 }
 
 html {
@@ -134,6 +136,8 @@ body {
 }
 
 .site-auth-link {
+  display: flex;
+  align-items: center;
   padding-top: 20px;
   padding-bottom: 20px;
   color: #757575;
@@ -146,6 +150,13 @@ body {
 .site-auth-link:focus {
   color: var(--accent-cl);
 }
+
+.site-auth-svg {
+  fill: currentColor;
+  margin-right: 10px;
+  padding: 0;
+}
+
 /* Main section */
 
 .section {
@@ -153,9 +164,19 @@ body {
   padding-bottom: 94px;
 }
 .main-section {
-  background-color: var(--dark-bg);
+  max-width: 1600px;
   padding-top: 200px;
   padding-bottom: 200px;
+
+  background-color: var(--dark-bg);
+  background-image: linear-gradient(
+      to right,
+      rgba(47, 48, 58, 0.4),
+      rgba(47, 48, 58, 0.4)
+    ),
+    url(../images/mainimg/mainimg.jpg);
+  background-repeat: no-repeat;
+  background-position: center;
 }
 .main-section-title {
   max-width: 696px;
@@ -223,6 +244,15 @@ body {
   margin-bottom: 0;
 }
 
+.features-icon-section {
+  width: 270px;
+  height: 120px;
+  background-color: var(--second-bg);
+  border-radius: 4px;
+  padding: 25px 103px;
+  margin-bottom: 30px;
+}
+
 /* Work section */
 
 .work-section {
@@ -241,12 +271,14 @@ body {
   background-color: var(--second-bg);
 }
 
-.card-item {
-  padding: 30px 32px;
-  background-color: #fff;
+.team-item {
   box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14),
     0px 2px 1px rgba(0, 0, 0, 0.2);
   border-radius: 0px 0px 4px 4px;
+}
+.card-item {
+  padding: 30px 32px;
+  background-color: #fff;
 }
 
 .card-item p {
@@ -269,6 +301,69 @@ body {
   font-size: 16px;
   line-height: 1.18;
   text-align: center;
+}
+
+.team-socials {
+  display: flex;
+  margin-top: 16px;
+}
+
+.team-socials-link {
+  width: 44px;
+  height: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50px;
+}
+
+.team-socials-link:hover,
+.team-socials-link:focus {
+  background-color: var(--accent-cl);
+}
+
+.team-socials-icon {
+  fill: #afb1b8;
+}
+
+.team-socials-link:hover .team-socials-icon,
+.team-socials-link:focus .team-socials-icon {
+  fill: #fff;
+}
+
+.item-icon:not(:last-child) {
+  margin-right: 10px;
+}
+
+/* Clients section */
+
+.clients {
+  display: flex;
+  justify-content: space-between;
+}
+
+.clients-link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 170px;
+  height: 92px;
+  border: 1px solid #afb1b8;
+  border-radius: 4px;
+}
+
+.clients-link:hover,
+.clients-link:focus {
+  border-color: var(--accent-cl);
+}
+
+.clients-icon {
+  fill: #afb1b8;
+}
+
+.clients-link:hover .clients-icon,
+.clients-link:focus .clients-icon {
+  fill: var(--accent-cl);
 }
 
 /* Portfolio */
@@ -315,6 +410,7 @@ body {
 }
 
 .portfolio-list .item {
+  width: 370px;
   flex-basis: calc((100% - 30px * 2) / 3);
   margin-right: 30px;
   margin-bottom: 30px;
@@ -351,11 +447,17 @@ body {
   line-height: 1.87;
 }
 
+.card-link:hover .large-card {
+  box-sizing: border-box;
+  border: 1px solid #eeeeee;
+  box-shadow: var(--card-shadow);
+}
+
 /* Footer */
 .footer {
   background-color: #2f303a;
 }
-.footer div {
+.footer > div {
   padding-top: 60px;
   padding-bottom: 60px;
 }
@@ -389,4 +491,45 @@ body {
 .address a:hover,
 .address a:focus {
   color: var(--accent-cl);
+}
+
+.footer-socials-text {
+  margin-bottom: 20px;
+
+  font-weight: 700;
+  line-height: 1, 14;
+  text-transform: uppercase;
+  color: #ffffff;
+}
+
+.footer-socials {
+  display: flex;
+}
+
+.footer-socials-icon {
+  fill: #fff;
+}
+
+.footer-socials-link {
+  width: 44px;
+  height: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50px;
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+.footer-socials-link:hover,
+.footer-socials-link:focus {
+  background-color: var(--accent-cl);
+}
+
+.footer-div {
+  display: flex;
+}
+
+.footer-socials-section {
+  margin-left: 70px;
+  padding-top: 10px;
 }
